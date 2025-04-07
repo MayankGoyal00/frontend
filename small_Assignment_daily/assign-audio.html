@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <script>
+        var aud, timer ;
+        function volume(value){
+            aud.volume=value;
+        }
+        window.onload = function(){
+           aud = document.getElementsByTagName("audio")[0];
+           console.log(vid.canPlayType("/Users/mayank.goyal/Documents/Frontend/media/enlivening.mp3"));
+        };
+        
+        function playaud(){
+            aud.play();
+            if(timer === undefined){
+                timer = setInterval(function(){
+                    document.getElementById("log").value = aud.currentTime;
+                    console.log(Math.random());
+                }, 1)
+             };
+        }
+        function pauseaud(){
+            aud.pause();
+            clearInterval(timer);
+        };
+        function stopaud(){
+            aud.pause();
+            aud.currentTime = 0;
+            document.getElementById("log").value = aud.currentTime;
+            clearInterval(timer);
+        };
+        function rewindaud(){
+            if(aud.currentTime==0){
+                aud.currentTime=0;
+            }
+            else{
+                aud.currentTime = aud.currentTime-2;
+            }   
+        };
+        function loopaud(){
+            if(aud.currentTime>152){
+                playvid();
+                aud.currentTime=0;
+                aud.currentTime++;
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>audio</h1>
+    <audio controls>
+        <source src="/Users/mayank.goyal/Documents/Frontend/media/enlivening.mp3">
+    </audio>
+
+    <input min="0" max="1" step="0.1" oninput="volume(this.value)" type="range"  >
+
+   
+
+    <h1>Current Time : <output id="log"></output> </h1>
+    <button onclick="playaud()" >Play</button>
+    <button onclick="stopaud()" >Stop</button>
+    <button onclick="pauseaud()" >Pause</button>
+        
+    <button onclick="rewindaud()" >Rewind</button>
+    <button onclick="loopaud()" >Loop</button> 
+    
+
+</body>
+</html>
+
+
+ 
+
+ 

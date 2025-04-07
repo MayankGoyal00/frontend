@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cheese Angoori</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      .site-header {
+        background-color: #fee2e2;
+        color: rgb(64, 0, 79);
+        padding: 8px 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .site-title {
+        font-size: x-large;
+        font-weight: bold;
+      }
+
+      .site-logo {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+
+      .image-details-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 20px;
+        align-items: flex-start;
+      }
+
+      .header-image {
+        width: 350px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+        flex-shrink: 0;
+      }
+
+      .details-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .container {
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .back-button {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 6px 12px;
+        background-color: #ddd;
+        border-radius: 4px;
+        color: #000;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+
+      .heart-img {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+      }
+
+      .nutrition {
+        margin: 15px 0;
+        font-size: 15px;
+      }
+
+      .info-row {
+        display: flex;
+
+        flex-wrap: wrap;
+      }
+
+      .description-section {
+        width: 80%;
+      }
+
+      .prep-time {
+        width: 35%;
+        text-align: right;
+      }
+
+      .serves-info {
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        flex: 1;
+        min-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-header">
+      <div class="site-title">पेट पूजा भोजनालय</div>
+      <img src="logo.png" alt="Logo" class="site-logo" />
+    </div>
+
+    <div class="container">
+      <a href="master.html" class="back-button">← Back</a>
+
+      <div class="image-details-row">
+        <img
+          src="Assignment/Dishes/images 2/cheese-angoori.png"
+          alt="Cheese Angoori"
+          class="header-image"
+        />
+
+        <div class="details-column">
+          <div class="title-row">
+            <h1>Cheese Angoori</h1>
+            <img
+              id="heartIcon"
+              src="oo.png"
+              class="heart-img"
+              onclick="toggleHeart(this)"
+              alt="Favorite"
+            />
+          </div>
+
+          <div class="nutrition">
+            <b>420 calories</b> –   27g of fat, 17g of carbohydrates, and 15g of protein
+          </div>
+
+          <div class="info-row">
+            <div class="description-section">
+              <b>Description:</b>
+              <p>
+                Cheese Angoori is a popular street food dish, particularly in Surat, Gujarat, consisting of small, deep-fried cheese balls (angoori) served in a rich, flavorful gravy, often described as a cheesy and creamy delight.</p>
+              <b>Ingredients:</b>
+              <p>
+                Paneer (Indian Cottage Cheese),
+                Milk,
+                Sugar,
+                Cardamom Powder,
+                Saffron Strands,
+                Rose Water
+              </p>
+            </div>
+          </div>
+          <b>Serves:</b> 2
+          <br />
+
+          <br />
+          <b>Preparation Time:</b>
+          20-25 min
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleHeart(img) {
+        const outlined = "oo.png";
+        const filled = "ll.png";
+        img.src = img.src.includes(outlined) ? filled : outlined;
+      }
+    </script>
+  </body>
+</html>

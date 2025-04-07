@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi</title>
+    <style>
+        body 
+        {
+            height: 100vh;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            background-color: #faf4f4;
+            font-family: 'Arial', sans-serif;
+        }
+        canvas 
+        {
+            border: 5px solid #fff;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="holiCanvas" width="500" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('holiCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0,'#ff6347');   
+        gradient.addColorStop(0.25,'#ffeb3b'); 
+        gradient.addColorStop(0.5,'#32cd32');  
+        gradient.addColorStop(0.75,'#1e90ff'); 
+        gradient.addColorStop(1, '#8a2be2');    
+        ctx.fillStyle= gradient;
+        ctx.fillRect(0, 0,500, 400);
+
+        ctx.font = "50px Arial";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText("Happy Holi !!",230, 200);
+
+        var boxX = 0;
+        var boxY = 0;
+        var boxD = 0;
+        setInterval(function(){
+            var r = Math.round(Math.random()*255);
+            var g = Math.round(Math.random()*255);
+            var b = Math.round(Math.random()*255);
+            boxX = Math.round(Math.random()*500);
+            boxY = Math.round(Math.random()*400);
+            boxD = Math.round(Math.random()*50);
+
+            ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+            ctx.fillRect(boxX, boxY, boxD, boxD);
+
+            if(boxX > 500){
+                boxX = -100;
+            }
+            boxX++;
+        }, 50);
+    </script>
+</body>
+</html>

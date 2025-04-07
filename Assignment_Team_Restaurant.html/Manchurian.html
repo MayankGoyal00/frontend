@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manchurian</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      .image-details-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 20px;
+        align-items: flex-start;
+      }
+
+      .header-image {
+        width: 350px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+        flex-shrink: 0;
+      }
+
+      .details-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .container {
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .back-button {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 6px 12px;
+        background-color: #ddd;
+        border-radius: 4px;
+        color: #000;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+
+      .heart-img {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+      }
+
+      .nutrition {
+        margin: 15px 0;
+        font-size: 15px;
+      }
+
+      .info-row {
+        display: flex;
+
+        flex-wrap: wrap;
+      }
+
+      .description-section {
+        width: 80%;
+      }
+
+      .prep-time {
+        width: 35%;
+        text-align: right;
+      }
+
+      .serves-info {
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        flex: 1;
+        min-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div
+        style="
+          background-color: #343a40;
+          color: #ffffff;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <h1 style="margin: 0; color: #ffc107">पेट पूजा भोजनालय</h1>
+          <p style="margin: 0; color: #adb5bd">
+            આવો ને મારા વ્હાલા, મજા જ મજા છે
+          </p>
+        </div>
+        <img
+          src="./images/masterpage-images/logo.png"
+          alt="Petpooja Logo"
+          width="100"
+          height="100"
+        />
+      </div>
+    </header>
+
+    <div class="container">
+      <a href="./master-page.html" class="back-button">← Back</a>
+
+      <div class="image-details-row">
+        <img src="./images/manchurian.jpg" class="header-image" />
+
+        <div class="details-column">
+          <div class="title-row">
+            <h1>Manchurian</h1>
+            <img
+              id="heartIcon"
+              src="oo.png"
+              class="heart-img"
+              onclick="toggleHeart(this)"
+            />
+          </div>
+
+          <div class="nutrition">
+            <b>294 calories</b> – 12 grams of fat, 35 grams of carbs, and 5.9
+            grams of protein
+          </div>
+
+          <div class="info-row">
+            <div class="description-section">
+              <b>Description:</b>
+              <p>
+                Manchurian is a fusion dish, originating from the blend of
+                Indian and Chinese culinary traditions. It features savory
+                vegetable or meat balls, often including ingredients like
+                cabbage, carrots, and spices, coated in a crispy batter and then
+                deep-fried
+              </p>
+
+              <b>Ingredients</b>
+              <p>
+                Cabbage, Carrots, Capsicum (Bell Peppers), Spring Onions,
+                Ginger, Garlic, Green Chilies, Cornflour, All-purpose flour
+                (Maida), Soy Sauce, Vinegar, Sugar
+              </p>
+            </div>
+          </div>
+          <b>Serves:</b> 4 people
+          <br />
+
+          <br />
+          <b>Preparation Time:</b>
+          15-20 minutes
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleHeart(img) {
+        const outlined = "oo.png";
+        const filled = "ll.png";
+        img.src = img.src.includes(outlined) ? filled : outlined;
+      }
+    </script>
+  </body>
+</html>
