@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+ 
+    <h1>Audio</h1>
+    <audio controls>
+        <source src="./enlivening.mp3">
+    </audio>
+    <br>
+    <h2>Audio Controls</h2>
+    <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()">Pause</button>
+    <button onclick="stopAudio()">Stop</button>
+    <button onclick="rewindAudio()">Rewind</button>
+    <button onclick="fastForwardAudio()">Fast Forward</button>
+    <button onclick="muteAudio()">Mute</button>
+    <button onclick="unmuteAudio()">Unmute</button>
+
+
+
+    <input type="range" min="0" max="100" id="volumeSlider" oninput="setVolume(this.value)">
+        <label for="volumeSlider">Volume</label>
+
+
+    <script>
+        var audio = document.getElementsByTagName("audio")[0];
+ 
+        
+        function playAudio() {
+            audio.play();
+        }
+ 
+        function pauseAudio() {
+            audio.pause();
+        }
+ 
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+ 
+        function rewindAudio() {
+            audio.currentTime -= 5;
+        }
+        function fastForwardAudio() {
+            audio.currentTime += 5;
+        }
+        function muteAudio() {
+            audio.muted = true;
+        }
+        function unmuteAudio() {
+            audio.muted = false;
+        }
+
+
+        function setVolume(value) {
+            audio.volume = value / 100;
+        }
+        
+    </script>
+ 
+ 
+   
+    
+</body>
+</html>
+ 
